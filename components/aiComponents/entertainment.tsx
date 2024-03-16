@@ -1,20 +1,14 @@
 "use client";
 
 import { useModal } from "@/hooks/use-model-store";
-import { MusicPlayer } from "./musicPlayer";
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import axios from "axios";
-import { Button } from "../ui/button";
 import {
   Compass,
-  CompassIcon,
   Dot,
   Droplet,
   Eye,
-  FlagTriangleLeft,
-  FlagTriangleRight,
   Headphones,
-  LucideCompass,
   Milestone,
   MoreVertical,
   MoveLeft,
@@ -22,18 +16,17 @@ import {
   PenTool,
   Play,
   Quote,
-  QuoteIcon,
   RefreshCcwIcon,
   RefreshCw,
   SunSnow,
-  Thermometer,
-  Wind,
+  Wind
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { ScrollArea } from "../ui/scroll-area";
-import { currentProfile } from "@/lib/current-profile";
-import ActionTooltip from "../action-tooltip";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import ActionTooltip from "../action-tooltip";
+import { Button } from "../ui/button";
+import { ScrollArea } from "../ui/scroll-area";
+import { MusicPlayer } from "./musicPlayer";
 
 const EntertainmentZone = () => {
   const {

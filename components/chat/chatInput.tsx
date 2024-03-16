@@ -1,18 +1,17 @@
 "use client";
 
+import { useModal } from "@/hooks/use-model-store";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { Paperclip, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
+import qs from "query-string";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Form, FormControl, FormField, FormItem } from "../ui/form";
-import { classNames } from "uploadthing/client";
-import { Paperclip, PinIcon, Plus, Send, SendIcon, Smile } from "lucide-react";
-import { Input } from "../ui/input";
-import qs from "query-string";
-import axios from "axios";
-import { useModal } from "@/hooks/use-model-store";
 import { EmojiPicker } from "../emojiPicker";
-import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
+import { Form, FormControl, FormField, FormItem } from "../ui/form";
+import { Input } from "../ui/input";
 
 const formSchema = z.object({
   content: z.string().min(1),

@@ -1,27 +1,16 @@
-import {
-  AtSign,
-  VenetianMask,
-  Bot,
-  Hash,
-  Map,
-  Menu,
-  Music,
-  Music2,
-} from "lucide-react";
-import { MobileToggle } from "../mobileToggle";
-import { UserAvatar } from "../user-avatar";
-import { SocketIndicator } from "../socketIndicator";
-import { ChatVideoButton } from "./chatVideoButton";
-import { Button } from "../ui/button";
-import MusicAi from "../aiComponents/musicAi";
-import { db } from "@/lib/db";
-import { useModal } from "@/hooks/use-model-store";
-import axios from "axios";
-import { AiSummary } from "../aiComponents/aiSummary";
-import { AiInCHatAnalyChat } from "../aiComponents/aiInChatAnalyChat";
 import { currentProfile } from "@/lib/current-profile";
+import { db } from "@/lib/db";
+import {
+  VenetianMask
+} from "lucide-react";
+import { AiInCHatAnalyChat } from "../aiComponents/aiInChatAnalyChat";
+import { AiSummary } from "../aiComponents/aiSummary";
+import MusicAi from "../aiComponents/musicAi";
 import { Payment } from "../aiComponents/payment";
-import { Profile } from "@prisma/client";
+import { MobileToggle } from "../mobileToggle";
+import { SocketIndicator } from "../socketIndicator";
+import { UserAvatar } from "../user-avatar";
+import { ChatVideoButton } from "./chatVideoButton";
 import { MapButton } from "./mapButton";
 
 interface ChatHeaderProps {

@@ -1,11 +1,10 @@
 "use client";
 
 import { useModal } from "@/hooks/use-model-store";
-import axios from "axios";
+import { Loader2, ScanFace } from "lucide-react";
 import { useEffect, useState } from "react";
 import ActionTooltip from "../action-tooltip";
 import { Button } from "../ui/button";
-import { Bot, Loader2, ScanFace } from "lucide-react";
 
 export const AiInCHatAnalyChat = (fm: { fm: string }) => {
   const { setAiChatSugg, onOpen, setRawQuery } = useModal();

@@ -1,10 +1,10 @@
 "use client";
 
-import { Globe2, Loader2, Map } from "lucide-react";
+import { useModal } from "@/hooks/use-model-store";
+import { Globe2, Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import ActionTooltip from "../action-tooltip";
 import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
-import { useModal } from "@/hooks/use-model-store";
 
 interface PaymentModalProps {
   me: any;

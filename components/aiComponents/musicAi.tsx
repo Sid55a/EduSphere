@@ -1,16 +1,15 @@
 "use client";
 
-import { Loader2, Music2 } from "lucide-react";
-import { Button } from "../ui/button";
-import axios from "axios";
 import { useModal } from "@/hooks/use-model-store";
-import { Tooltip } from "../ui/tooltip";
-import ActionTooltip from "../action-tooltip";
+import axios from "axios";
+import { Loader2, Music2 } from "lucide-react";
 import { useState } from "react";
+import ActionTooltip from "../action-tooltip";
+import { Button } from "../ui/button";
 function MusicAi(fm: { fm: string }) {
   const { setAiMusicSugg, onOpen, setCurrEMode } = useModal();
   const [loading, setLoading] = useState(false);
-  // console.log(fm.fm);
+
   const handleClick = async () => {
     try {
       setLoading(true);

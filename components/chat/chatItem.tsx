@@ -1,8 +1,10 @@
 "use client";
 
+import { useModal } from "@/hooks/use-model-store";
+import { cn } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Member, MemberRole, Profile } from "@prisma/client";
-import { UserAvatar } from "../user-avatar";
-import ActionTooltip from "../action-tooltip";
+import axios from "axios";
 import {
   Bomb,
   Edit,
@@ -10,26 +12,20 @@ import {
   Languages,
   Loader2,
   Mic,
-  ShieldAlert,
-  ShieldCheck,
-  Trash,
+  Trash
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import * as z from "zod";
+import { useParams, useRouter } from "next/navigation";
 import qs from "query-string";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import * as z from "zod";
+import ActionTooltip from "../action-tooltip";
+import { Button } from "../ui/button";
 import { Form, FormControl, FormField, FormItem } from "../ui/form";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import axios from "axios";
-import { useModal } from "@/hooks/use-model-store";
-import { useParams, useRouter } from "next/navigation";
-import { setTimeout } from "timers";
-import toast from "react-hot-toast";
-import { Badge } from "../ui/badge";
+import { UserAvatar } from "../user-avatar";
 
 interface ChatItemProps {
   id: string;

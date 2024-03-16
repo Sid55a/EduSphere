@@ -5,58 +5,30 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuRadioGroup,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
+import { useModal } from "@/hooks/use-model-store";
+import { Note, TODO } from "@prisma/client";
 import {
   Book,
   Bot,
   BrainCircuit,
-  Cloud,
   Code,
   Copy,
-  CreditCard,
   Dices,
-  File,
-  Gamepad,
   Gamepad2,
-  Github,
-  GraduationCap,
-  Image,
-  Keyboard,
   Laugh,
-  LifeBuoy,
-  LogOut,
-  Mail,
   Map,
-  MessageSquare,
   Music,
   Newspaper,
-  PartyPopper,
   Pen,
-  Plus,
-  PlusCircle,
-  Settings,
-  Text,
-  User,
-  UserPlus,
-  Users,
+  Text
 } from "lucide-react";
-import ActionTooltip from "../action-tooltip";
-import { Button } from "../ui/button";
-import { DropdownMenuGroup } from "@radix-ui/react-dropdown-menu";
-import { useModal } from "@/hooks/use-model-store";
-import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
-import { Note, TODO } from "@prisma/client";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import ActionTooltip from "../action-tooltip";
 
 interface ToolButtonProps {
   task: TODO[];

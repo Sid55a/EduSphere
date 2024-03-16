@@ -1,12 +1,10 @@
 "use client";
 
 import { useModal } from "@/hooks/use-model-store";
-import axios from "axios";
+import { IndianRupee, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import ActionTooltip from "../action-tooltip";
 import { Button } from "../ui/button";
-import { Bot, IndianRupee, Loader2, ScanFace } from "lucide-react";
-import { Profile } from "@prisma/client";
 
 interface PaymentModalProps {
   me: any;
