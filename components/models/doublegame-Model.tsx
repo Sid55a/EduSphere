@@ -2,39 +2,15 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
+  DialogHeader
 } from "@/components/ui/dialog";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 
-import axios from "axios";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
-import {useRef } from 'react';
-import { Player } from '@lordicon/react';
-import FileUpload from "../file-upload";
-import ICON from '../../public/clap.json';
-import { redirect, useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-model-store";
-import { MusicPlayer } from "../aiComponents/musicPlayer";
-import { cn } from "@/lib/utils";
-import { ScrollArea } from "../ui/scroll-area";
-import { EggFriedIcon, Gamepad2, Gamepad2Icon, Quote, RefreshCw } from "lucide-react";
+import { Player } from '@lordicon/react';
+import { EggFriedIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export const DoubleGameModel = () => {
   const router = useRouter();

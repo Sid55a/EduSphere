@@ -11,9 +11,9 @@ import {
 import { useModal } from "@/hooks/use-model-store";
 import { useOrigin } from "@/hooks/use-origin";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
 
 export const LeaveServerModal = () => {
   const router = useRouter();

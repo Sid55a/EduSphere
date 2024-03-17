@@ -4,7 +4,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle
+  DialogTitle,
 } from "@/components/ui/dialog";
 
 import { useModal } from "@/hooks/use-model-store";
@@ -13,12 +13,7 @@ import { useEffect, useState } from "react";
 import * as z from "zod";
 import { ScrollArea } from "../ui/scroll-area";
 
-const formSchema = z.object({
-  name: z.string().min(1, { message: "Music name is required" }),
-});
-
 export const AiChatSummModel = () => {
-  const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
   const { isOpen, onClose, aiChatResult, type } = useModal();
   const isModelOpen = isOpen && type === "aiChatSumm";

@@ -2,22 +2,21 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from "@/components/ui/dialog";
 
 
 import { useModal } from "@/hooks/use-model-store";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { Check, Copy, RefreshCw } from "lucide-react";
 import { useOrigin } from "@/hooks/use-origin";
-import { useState,useEffect,useRef } from "react";
-import axios from "axios";
 import { Player } from '@lordicon/react';
-import  ICON  from "../../public/mail.json"
+import axios from "axios";
+import { Check, Copy, RefreshCw } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import ICON from "../../public/mail.json";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 export const InviteModal = () => {
   const { isOpen, onClose, onOpen, type, data } = useModal();
   const isModelOpen = isOpen && type === "invite";

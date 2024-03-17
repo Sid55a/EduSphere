@@ -19,6 +19,7 @@ import { useModal } from "@/hooks/use-model-store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ChannelType } from "@prisma/client";
 import axios from "axios";
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import qs from "query-string";
 import { useEffect } from "react";
@@ -33,7 +34,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   name: z

@@ -1,4 +1,12 @@
-import { Channel, ChannelType, Profile, Server } from "@prisma/client";
+import {
+  Channel,
+  ChannelType,
+  Note,
+  Profile,
+  Server,
+  TODO,
+} from "@prisma/client";
+import { type } from "os";
 import { create } from "zustand";
 
 export type ModalType =
@@ -15,7 +23,18 @@ export type ModalType =
   | "deleteMessage"
   | "musicSelector"
   | "aiMusicSugg"
-  | "aiChatSumm";
+  | "aiChatSumm"
+  | "imageGeneration"
+  | "askAnything"
+  | "aiInChatAsk"
+  | "aiTextToVoice"
+  | "payment"
+  | "pdfChat"
+  | "jokeModel"
+  | "mapModel"
+  | "noteModal"
+  | "cricketModel"
+  | "newsModal";
 
 interface ModalData {
   server?: Server;
@@ -27,10 +46,13 @@ interface ModalData {
   musicAiQ?: string;
   aiMusicSugg?: string;
   aiChatSugg?: string;
-
+  aiImageUrl?: string;
+  aiAskResponse?: string;
+  aiRawQuery?: string;
   me?: Profile;
   other?: Profile;
   type?: string;
+  aiGroupQAInput?: string;
 }
 
 interface ModalStore {
@@ -46,20 +68,65 @@ interface ModalStore {
   rawQuery: string;
   fnqResult: string;
   aiVoiceLink: string;
-
+  quote: string;
+  currEMode: number;
+  coord: { lat: any; lng: any };
+  tasks: TODO[];
+  cricData: {
+    seriesName: string;
+    matchHistory: string;
+    matchStatus: string;
+    team1Name: string;
+    team1Runs: string;
+    team2Name: string;
+    team2Runs: string;
+    matchCurrentInfo: string;
+    player1: string;
+    player2: string;
+    player3: string;
+    player4: string;
+  };
+  groupChatData: string;
+  groupSummary: string;
+  setGroupChatData: (data: string) => void;
+  setCricData: (t: {
+    seriesName: string;
+    matchHistory: string;
+    matchStatus: string;
+    team1Name: string;
+    team1Runs: string;
+    team2Name: string;
+    team2Runs: string;
+    matchCurrentInfo: string;
+    player1: string;
+    player2: string;
+    player3: string;
+    player4: string;
+  }) => void;
+  setTasks: (t: TODO[]) => void;
+  notes: Note[];
+  setNotes: (t: Note[]) => void;
   setCoord: (la: any, ln: any) => void;
   setCurrEMode: (em: number) => void;
   setQuote: (q: string) => void;
   setAiAskResult: (aiAskResponse: string) => void;
   setAiChatSugg: (aiSugg: string) => void;
+  setGroupSummary: (text: string) => void;
+  setmAiQ: (q: string) => void;
+  onOpen: (type: ModalType, data?: ModalData) => void;
+  onClose: () => void;
+  musicUri: (uri: string) => void;
+  setAiMusicSugg: (aiMusicSugg: any) => void;
+  setAiImageResult: (aiImageUrl: string) => void;
+  setRawQuery: (aiRawQuery: string) => void;
+  setFnqResult: (fnq: string) => void;
+  setAiVoiceLink: (link: string) => void;
 }
 
 export const useModal = create<ModalStore>((set) => ({
   coord: { lat: "", lng: "" },
   type: null,
   data: {},
-  mLink: "",
-  isOpen: false,
   mLink: "",
   isOpen: false,
   mAiQ: "",
@@ -70,6 +137,43 @@ export const useModal = create<ModalStore>((set) => ({
   rawQuery: "",
   fnqResult: "",
   aiVoiceLink: "",
+  quote: "",
+  currEMode: 1,
+  tasks: [],
+  notes: [],
+  cricData: {
+    seriesName: "",
+    matchHistory: "",
+    matchStatus: "",
+    team1Name: "",
+    team1Runs: "",
+    team2Name: "",
+    team2Runs: "",
+    matchCurrentInfo: "",
+    player1: "",
+    player2: "",
+    player3: "",
+    player4: "",
+  },
+  groupSummary: "",
+  groupChatData: "",
+  setGroupChatData: (data: string) => set({ groupChatData: data }),
+  setCricData: (t: {
+    seriesName: string;
+    matchHistory: string;
+    matchStatus: string;
+    team1Name: string;
+    team1Runs: string;
+    team2Name: string;
+    team2Runs: string;
+    matchCurrentInfo: string;
+    player1: string;
+    player2: string;
+    player3: string;
+    player4: string;
+  }) => set({ cricData: { ...t } }),
+  setGroupSummary: (text: string) => set({ groupSummary: text }),
+  setNotes: (t: Note[]) => set({ notes: t }),
   setTasks: (t: TODO[]) => set({ tasks: t }),
   setCoord: (la, ln) => set({ coord: { lat: la, lng: ln } }),
   setCurrEMode: (em) => set({ currEMode: em }),

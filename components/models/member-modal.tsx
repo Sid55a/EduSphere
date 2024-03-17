@@ -8,23 +8,23 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
 import { useModal } from "@/hooks/use-model-store";
 import { ServerWithMemberWithProflie } from "@/types";
-import { ScrollArea } from "../ui/scroll-area";
-import { UserAvatar } from "../user-avatar";
+import { Player } from '@lordicon/react';
+import { MemberRole } from "@prisma/client";
+import axios from "axios";
 import {
   Check,
   Gavel,
   Loader2,
   MoreVertical,
   Shield,
-  ShieldAlert,
   ShieldCheck,
-  ShieldQuestion,
+  ShieldQuestion
 } from "lucide-react";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from 'react';
+import ICON from "../../public/invite.json";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -36,16 +36,13 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import { MemberRole } from "@prisma/client";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import { Badge } from "../ui/badge";
+import { ScrollArea } from "../ui/scroll-area";
+import { UserAvatar } from "../user-avatar";
 const roleIcnMap = {
   GUEST: null,
   MODERATOR:<span className=" text-xs  text-center rounded-lg ml-2 text-blue-500"> Guest</span>,
   ADMIN: <span className=" text-xs  text-center rounded-lg ml-2 text-rose-500"> Admin</span>,
 };
-import ICON  from "../../public/invite.json";
 
 
 export const MemberModal = () => {

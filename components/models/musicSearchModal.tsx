@@ -1,38 +1,34 @@
 "use client";
 
-import { Player } from "@lordicon/react";
-import ICON from "../../public/m.json";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogFooter,
+  DialogTitle
 } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
+import { Player } from "@lordicon/react";
 
+import { useModal } from "@/hooks/use-model-store";
+import { cn } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
+import { Disc3, Music2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useEffect, useState, useRef } from "react";
-import FileUpload from "../file-upload";
-import { redirect, useRouter } from "next/navigation";
-import { useModal } from "@/hooks/use-model-store";
 import { MusicPlayer } from "../aiComponents/musicPlayer";
-import { cn } from "@/lib/utils";
-import { Disc2, Disc3, Music2 } from "lucide-react";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 
 const formSchema = z.object({

@@ -9,15 +9,14 @@ import {
 } from "@/components/ui/dialog";
 import { useModal } from "@/hooks/use-model-store";
 import { useOrigin } from "@/hooks/use-origin";
+import { Player } from '@lordicon/react';
 import axios from "axios";
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import qs from "query-string";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ICON from '../../public/trash.json';
 import { Button } from "../ui/button";
-import { Loader2 } from "lucide-react";
-import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
-import ICON  from '../../public/trash.json';
 export const DeleteMessageModal = () => {
   const router = useRouter();
 

@@ -2,23 +2,15 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from "@/components/ui/dialog";
 import { useModal } from "@/hooks/use-model-store";
-import axios from "axios";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { Layer, Map, Marker, Source } from "react-map-gl";
-import * as z from "zod";
-import { Button } from "../ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { TODOPage } from "../notes/todoPage";
+import { useEffect, useState } from "react";
 import { Notepage } from "../notes/note";
-import { db } from "@/lib/db";
-import { currentProfile } from "@/lib/current-profile";
+import { TODOPage } from "../notes/todoPage";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 export const NoteModel = () => {
   const [isMounted, setIsMounted] = useState(false);

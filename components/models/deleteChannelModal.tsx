@@ -7,13 +7,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import qs from "query-string";
 import { useModal } from "@/hooks/use-model-store";
 import { useOrigin } from "@/hooks/use-origin";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import qs from "query-string";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { useParams, useRouter } from "next/navigation";
 
 export const DeleteChannelModal = () => {
   const router = useRouter();

@@ -1,28 +1,25 @@
 "use client";
 import {
   Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
+  DialogContent
 } from "@/components/ui/dialog";
 
 import { useModal } from "@/hooks/use-model-store";
 import { cn } from "@/lib/utils";
 import axios from "axios";
-import { Dot, Play, RefreshCw, Triangle, TriangleRight } from "lucide-react";
+import { Dot, Play } from "lucide-react";
 import { useRouter } from "next/navigation";
-import {  useState } from "react";
-import { Button } from "../ui/button";
-import { ScrollArea } from "../ui/scroll-area";
-import { Card, CardContent, CardTitle } from "../ui/card";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardTitle } from "../ui/card";
+import { ScrollArea } from "../ui/scroll-area";
 
 
-  import { useEffect, useRef } from 'react';
   import { Player } from '@lordicon/react';
+import { useEffect, useRef } from 'react';
   
-import ICON from  '../../public/news.json';
+import ICON from '../../public/news.json';
 
 
 export const NewsModel = () => {

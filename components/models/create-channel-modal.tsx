@@ -17,17 +17,19 @@ import {
 
 import { useModal } from "@/hooks/use-model-store";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Player } from '@lordicon/react';
 import axios from "axios";
 import { useParams, useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
 import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
+import { useForm } from "react-hook-form";
 
-import ICON from '../../public/pencil.json';
+import { ChannelType } from "@prisma/client";
+import { Loader2 } from "lucide-react";
+import qs from "query-string";
 import * as z from "zod";
+import ICON from '../../public/pencil.json';
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { ChannelType } from "@prisma/client";
 import {
   Select,
   SelectContent,
@@ -35,8 +37,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import qs from "query-string";
-import { Loader2 } from "lucide-react";
 const formSchema = z.object({
   name: z
     .string()

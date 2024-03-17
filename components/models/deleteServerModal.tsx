@@ -7,15 +7,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
 import { useModal } from "@/hooks/use-model-store";
 import { useOrigin } from "@/hooks/use-origin";
+import { Player } from '@lordicon/react';
 import axios from "axios";
-import { useState } from "react";
-import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from 'react';
+import { Button } from "../ui/button";
 const ICON = require('../../public/trash.json');
 export const DeleteServerModal = () => {
   const router = useRouter();
