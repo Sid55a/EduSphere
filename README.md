@@ -23,80 +23,92 @@ Clone the project repository from the version control system (e.g., GitHub).
 cd path/to/destination/directory
 git clone [repository_url]
 cd [project_directory]
+```
 
 Replace path/to/destination/directory with the actual path to the directory where you want to clone the repository and [repository_url] with the actual URL of the project repository.
-```
-Step 2: Install Dependencies
+
+### Step 2: Install Dependencies
 Run the following command in the terminal:
-
+```bash
 npm install
-
-Step 3: Configuration
+```
+### Step 3: Configuration
 Configure the following environment variables:
 
 # Clerk Authentication
+```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
-
+```
             Clerk website link :https://clerk.com/docs/quickstarts/nextjs
 
 
 
 
 # Database Configuration
-DATABASE_URL=   
+```bash
+DATABASE_URL=
+```
                 Link: https://www.postgresql.org/download/
 
 # UploadThing Configuration
+```bash
 UPLOADTHING_SECRET= 
 
 UPLOADTHING_APP_ID=
-
+```
               Link: https://docs.uploadthing.com/getting-started/appdir
 
 # LiveKit Configuration
+```bash
 LIVEKIT_API_KEY=
 
 LIVEKIT_API_SECRET=
 
 NEXT_PUBLIC_LIVEKIT_URL=
-
+```
            Website link : https://docs.uploadthing.com/getting-started/appdir
 
 # Eden AI Configuration
+```bash
 EDEN_AI_KEY=
-
+```
 # OpenAI Configuration
+```bash
 OPENAI_KEY=
-
+```
 # Spotify Api Configuration
+```bash
 SPOTIFY_KEY=
-
+```
 #Weather Api Configuration
+```bash
 OPEN_WEATHER_KEY=
-
+```
 #MapBox Api Configuration
+```bash
 MAPBOX_ASCESS_KEY=
 MAPBOX_ASCESS_TOKEN=
-
+```
 Website link:https://www.mapbox.com/
 
 
 # Application URL
+```bash
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-
+```
 
 Step 4: Run the Project
 Run the following commands in the terminal:
-
+```bash
 npx prisma init
 npx prisma generate
 npx prisma db push
 npm install @lordicon/element lottie-web
 npm run dev
-
+```
 And there you go...
