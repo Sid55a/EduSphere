@@ -12,9 +12,9 @@ To set up a Next.js web application, you'll need to ensure you have the followin
 
 2. **Text Editor or IDE**: You need a text editor or an integrated development environment (IDE) to write your code. Popular choices include Visual Studio Code, Sublime Text, Atom, or WebStorm.
 
-## Installation Steps
+# Installation Steps
 
-### Step 1: Clone the Repository
+## Step 1: Clone the Repository
 
 Clone the project repository from the version control system (e.g., GitHub).
 
@@ -27,15 +27,15 @@ cd [project_directory]
 
 Replace path/to/destination/directory with the actual path to the directory where you want to clone the repository and [repository_url] with the actual URL of the project repository.
 
-### Step 2: Install Dependencies
+## Step 2: Install Dependencies
 Run the following command in the terminal:
 ```bash
 npm install
 ```
-### Step 3: Configuration
+## Step 3: Configuration
 Configure the following environment variables:
 
-# Clerk Authentication
+### Clerk Authentication
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
@@ -55,7 +55,7 @@ DATABASE_URL=
 ```
                 Link: https://www.postgresql.org/download/
 
-# UploadThing Configuration
+### UploadThing Configuration
 ```bash
 UPLOADTHING_SECRET= 
 
@@ -63,7 +63,7 @@ UPLOADTHING_APP_ID=
 ```
               Link: https://docs.uploadthing.com/getting-started/appdir
 
-# LiveKit Configuration
+### LiveKit Configuration
 ```bash
 LIVEKIT_API_KEY=
 
@@ -73,23 +73,23 @@ NEXT_PUBLIC_LIVEKIT_URL=
 ```
            Website link : https://docs.uploadthing.com/getting-started/appdir
 
-# Eden AI Configuration
+### Eden AI Configuration
 ```bash
 EDEN_AI_KEY=
 ```
-# OpenAI Configuration
+### OpenAI Configuration
 ```bash
 OPENAI_KEY=
 ```
-# Spotify Api Configuration
+### Spotify Api Configuration
 ```bash
 SPOTIFY_KEY=
 ```
-#Weather Api Configuration
+### Weather Api Configuration
 ```bash
 OPEN_WEATHER_KEY=
 ```
-#MapBox Api Configuration
+### MapBox Api Configuration
 ```bash
 MAPBOX_ASCESS_KEY=
 MAPBOX_ASCESS_TOKEN=
@@ -97,12 +97,12 @@ MAPBOX_ASCESS_TOKEN=
 Website link:https://www.mapbox.com/
 
 
-# Application URL
+### Application URL
 ```bash
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
 
-Step 4: Run the Project
+## Step 4: Run the Project
 Run the following commands in the terminal:
 ```bash
 npx prisma init
