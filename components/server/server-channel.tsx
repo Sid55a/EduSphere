@@ -1,21 +1,19 @@
 "use client";
 
+import { ModalType, useModal } from "@/hooks/use-model-store";
 import { cn } from "@/lib/utils";
 import { Channel, ChannelType, MemberRole, Server } from "@prisma/client";
 import {
-  AtSign,
-  VenetianMask,
   Edit,
-  Hash,
   Lock,
   Mic,
   Trash,
-  Video,
+  VenetianMask,
+  Video
 } from "lucide-react";
-import { useRouter, useParams } from "next/navigation";
-import ActionTooltip from "../action-tooltip";
-import { ModalType, useModal } from "@/hooks/use-model-store";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
+import ActionTooltip from "../action-tooltip";
 
 interface ServerChannelProps {
   channel: Channel;

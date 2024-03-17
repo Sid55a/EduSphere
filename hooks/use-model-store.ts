@@ -34,8 +34,14 @@ export type ModalType =
   | "mapModel"
   | "noteModal"
   | "cricketModel"
-  | "newsModal";
-
+  | "newsModal"
+  | "selfgameModel"
+  | "gameModel"
+  | "computergameModel"
+  | "doublegameModel"
+  | "groupSummaryModel"
+  | "groupQAmodel"
+  | "groupNextReply";
 interface ModalData {
   server?: Server;
   channel?: Channel;

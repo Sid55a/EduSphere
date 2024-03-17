@@ -1,6 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   CommandDialog,
@@ -10,7 +11,6 @@ import {
   CommandItem,
   CommandList,
 } from "../ui/command";
-import { useParams, useRouter } from "next/navigation";
 
 interface ServerSeacrhProps {
   data: {

@@ -1,33 +1,16 @@
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { channel } from "diagnostics_channel";
+import { ChannelType } from "@prisma/client";
+import { Mic, VenetianMask, Video } from 'lucide-react';
 import { redirect } from "next/navigation";
-import { ServerHeader } from "./server-header";
-import { ScrollArea } from "../ui/scroll-area";
-import { ServerSearch } from "./serverSearch";
-import { ChannelType, MemberRole } from "@prisma/client";
-import { Badge, VenetianMask } from 'lucide-react';
-import {
-  ArrowLeft,
-  ArrowRight,
-  AtSign,
-  Hash,
-  Mic,
-  ShieldAlert,
-  ShieldCheck,
-  Video,
-} from "lucide-react";
-import { Avatar } from "../ui/avatar";
-import { Separator } from "../ui/separator";
-import { ServerSection } from "./serverSection";
-import { ServerChannel } from "./server-channel";
-import ServerMember from "./serverMember";
-import { classNames } from "uploadthing/client";
-import { MusicPlayer } from "../aiComponents/musicPlayer";
-import { useModal } from "@/hooks/use-model-store";
-import { Button } from "../ui/button";
 import EntertainmentZone from "../aiComponents/entertainment";
-import axios from "axios";
+import { ScrollArea } from "../ui/scroll-area";
+import { Separator } from "../ui/separator";
+import { ServerChannel } from "./server-channel";
+import { ServerHeader } from "./server-header";
+import ServerMember from "./serverMember";
+import { ServerSearch } from "./serverSearch";
+import { ServerSection } from "./serverSection";
 
 
 
